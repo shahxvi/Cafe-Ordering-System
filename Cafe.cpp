@@ -5,16 +5,16 @@
 using namespace std;
 
 //function prototype
-void menu();
-void receipt(int countB, int countF, int countD, int menuQtyAll[], int countCust, int memSold, double totSales); // Line 162
-double Total(double, double, double, double); // Line 165
+void menu(); // Line 539
+void receipt(int countB, int countF, int countD, int menuQtyAll[], int countCust, int memSold, double totSales); // Line 621 
+double Total(double, double, double, double); // Line 666 
 
 int main (){
     //function call
     menu();
     // variable declaration    
     string codeB, codeF, codeD, catD;
-    char catB, catF, newMem;
+    char catB, catF, newMem; // Line 165
     char newCust = 'Y', ans_topping;
     int  countCust, memSold, countB = 0, countF = 0, countD = 0;
     double totalSales;
@@ -32,7 +32,7 @@ int main (){
         //looping order for every new customer
         string name = " ", codeB, codeF, codeD;
         double rate = 0.0, tax = 0.0, memprice = 0.0;
-        char order = 'Y', catB, catF, catD, memType, codeT, membership;
+        char order = 'Y', catB, catF, memType, codeT, membership;
         int cat;
         int indexT[4] = {};
         int menuQty[21] = {};
@@ -335,7 +335,7 @@ int main (){
                             numtops++;
                             cout << "\tTopping (" << numtops << ") : ";
                             cin >> codeT;
-                            int indexT = 0;
+                            int indexT[3] = {0};
                             
                             //codeT selection
                             if(codeT == 'S' || codeT == 's'){
@@ -460,7 +460,7 @@ int main (){
         }
         
         //calculation : tax rate
-        double const tax = 0.06 * subtotal[countCust];
+        const double tax = 0.06 * subtotal[countCust];
             
         //output : customer receipt
         cout << "\n\n---------------------------------------------------------------------------" << endl;
@@ -519,7 +519,8 @@ int main (){
         
         //calculation : final total (amount due)
         total[countCust] = subtotal[countCust] - rate + tax + memprice;
-        totSales += total[countCust];
+        double totSales;
+		totSales += total[countCust];
         cout << "Amount Due"<< "\t\t" << " : RM" << total[countCust] << endl;
         cout << "\nThank you for ordering! please take a seat while we prepare your food. . ." << endl;
         cout << "---------------------------------------------------------------------------" << endl;
@@ -527,10 +528,9 @@ int main (){
         cin >> newCust;     
         
         //function call
-        receipt(countB, countF, countD, countCust, memSold, totSales);    
+        receipt(countB, countF, countD, &countCust, memSold, someInt, totSales);
     }
-    while(newCust == 'Y' || newCust == 'y');
-
+    
     return 0;
 }
 
