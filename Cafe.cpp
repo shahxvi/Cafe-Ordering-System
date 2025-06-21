@@ -6,7 +6,7 @@ using namespace std;
 
 //function prototype
 void menu();
-void receipt(countB, countF, countD, menuQtyAll, countCust, memSold, totSales);
+void receipt(int countB, int countF, int countD, int menuQtyAll[], int countCust, int memSold, double totSales);
 double Total(double, double, double, double);
 
 int main (){
