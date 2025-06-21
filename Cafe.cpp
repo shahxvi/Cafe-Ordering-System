@@ -6,8 +6,8 @@ using namespace std;
 
 //function prototype
 void menu();
-void receipt(int countB, int countF, int countD, int menuQtyAll[], int countCust, int memSold, double totSales);
-double Total(double, double, double, double);
+void receipt(int countB, int countF, int countD, int menuQtyAll[], int countCust, int memSold, double totSales); // Line 162
+double Total(double, double, double, double); // Line 165
 
 int main (){
     //function call
@@ -616,6 +616,7 @@ void menu(){
     cout << "---------------------------------------------------------------------------" << endl;   
     
 }
+
 void receipt(int countB, int countF, int countD, int menuQtyAll[], int countCust, int memSold, double totSales){
     
     string menuArr[21] = {"Latte", "Mocha", "Caramel Macchiato", "Green Tea", "Java Chip", "Mint Chocolate", "Spaghetti Bolognese", "Spaghetti Carbonara", "Lasagna", "Chicken Chop", "Cheesebuger", "Fish & Chips", "Croissant Chocolate", "Croissant Strawberry", "Croissant Matcha", "Cake Red Velvet", "Cake Chocolate Indulgence", "Cake Basque Cheesecake", "Ice Cream Vanilla", "Ice Cream Strawberry", "Ice Cream Chocolate"};
@@ -660,6 +661,7 @@ void receipt(int countB, int countF, int countD, int menuQtyAll[], int countCust
     cout << "***************************************************************************" << endl;
     
 }
+
 double Total(double totB, double totF, double totD, double totT){
     double total = 0.0;
     total = totB + totF + totD + totT;
